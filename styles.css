@@ -556,6 +556,12 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--i
 .page-hero-media img { width: 100%; height: 100%; object-fit: cover; }
 .page-hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(40,18,10,.85) 0%, rgba(40,18,10,.6) 50%, rgba(40,18,10,.35) 100%); }
 .page-hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); letter-spacing: -0.04em; line-height: 1; }
+.page-hero h1 .h1-soft { display: block; color: rgba(255,255,255,.72); }
+/* Startseite: größerer Header mit Video */
+.page-hero-home::before { background: linear-gradient(90deg, rgba(40,18,10,.82) 0%, rgba(40,18,10,.5) 55%, rgba(40,18,10,.15) 100%), linear-gradient(0deg, rgba(40,18,10,.55) 0%, transparent 45%); }/* Startansicht "Unser Konzept" */
+.concept-steps li:last-child b { background: var(--clay-700); color: #fff; border: 0; }
+.concept-sub { font-size: 1.35rem; margin: var(--s7) 0 var(--s4); }
+.concept-cta { margin-top: var(--s7); }
 .page-hero .lead { margin-top: var(--s4); max-width: 46ch; font-size: clamp(1.05rem, 1.4vw, 1.2rem); color: rgba(255,255,255,.9); }
 .subnav { display: flex; flex-wrap: wrap; gap: 8px; margin-top: var(--s6); }
 .subnav a { display: inline-flex; align-items: center; min-height: 40px; padding: 0 16px; border-radius: var(--r-pill); border: 1px solid rgba(255,255,255,.4); color: #fff; text-decoration: none; font-weight: 600; font-size: .95rem; background: rgba(255,255,255,.06); backdrop-filter: blur(6px); transition: background-color var(--t-fast) ease; }
