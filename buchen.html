@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Leistung buchen – racket-lab.de</title>
+  <meta name="description" content="Schläger-Matching, Schläger-Tuning, Besaitung oder Beratung buchen – in Hamburg vorbeibringen oder per Post schicken.">
+  <meta name="theme-color" content="#8a4b33">
+  <link rel="icon" href="assets/favicon.svg?v=3" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500;600;700;800&family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  </svg>
+
+  <header class="site-header" data-header>
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="racket-lab.de – zur Startseite">
+        <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><rect x="0.75" y="0.75" width="62.5" height="62.5" rx="18" fill="#fbf8f4" stroke="#8a4b33" stroke-opacity=".28" stroke-width="1.5"/><image href="assets/img/logo-silhouette-lab.png" x="6.40" y="6.60" width="51.20" height="50.80"/></svg>
+        <span class="logo-text">racket<span class="logo-light">-lab</span><span class="logo-tld">.de</span></span>
+      </a>
+      <nav class="main-nav" aria-label="Hauptnavigation" id="main-nav">
+        <ul>
+          <li class="has-sub">
+            <a href="index.html">Tuning erklärt</a>
+            <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="sub-tuning"><svg class="ic" aria-hidden="true"><use href="#i-chevron"/></svg><span class="sr-only">Untermenü Tuning erklärt</span></button>
+            <ul class="sub" id="sub-tuning">
+              <li><a href="index.html#tuning">Wie Tuning funktioniert</a></li>
+              <li><a href="index.html#kennwerte">Die Kennwerte</a></li>
+              <li><a href="index.html#warum">Warum es sich lohnt</a></li>
+              <li><a href="index.html#ergebnis">Das bekommst du</a></li>
+            </ul>
+          </li>
+          <li class="has-sub">
+            <a href="leistungen.html">Leistungen</a>
+            <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="sub-services"><svg class="ic" aria-hidden="true"><use href="#i-chevron"/></svg><span class="sr-only">Untermenü Leistungen</span></button>
+            <ul class="sub" id="sub-services">
+              <li><a href="leistungen.html#matching">Schläger-Matching</a></li>
+              <li><a href="leistungen.html#tuning">Schläger-Tuning</a></li>
+              <li><a href="leistungen.html#stringing">Besaitung</a></li>
+              <li><a href="leistungen.html#consulting">Beratung</a></li>
+            </ul>
+          </li>
+          <li><a href="about.html">Über uns</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+          <li class="nav-book-li"><a class="nav-book" href="buchen.html" aria-current="page">Leistung buchen <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" data-menu-toggle>
+        <svg class="ic ic-open" aria-hidden="true"><use href="#i-menu"/></svg>
+        <svg class="ic ic-close" aria-hidden="true"><use href="#i-close"/></svg>
+        <span class="sr-only">Menü</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero page-hero-compact" aria-labelledby="page-title">
+      <div class="page-hero-media" aria-hidden="true">
+        <video class="bg-video" muted loop playsinline preload="auto" data-autoplay style="object-position:50% 72%">
+          <source src="Videos/5740608-uhd_4096_2160_25fps.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="container">
+        <p class="eyebrow eyebrow-light">Termin sichern</p>
+        <h1 id="page-title">Leistung buchen</h1>
+        <p class="lead">Stell dir deine Leistung zusammen. Wir melden uns persönlich mit einem Terminvorschlag – die Anfrage ist unverbindlich.</p>
+      </div>
+    </section>
+
+    <section class="section booking-section">
+      <div class="container book-layout">
+        <form class="book-form" novalidate data-booking>
+          <div class="form-summary" tabindex="-1" role="alert" hidden data-error-summary>
+            <p><strong>Bitte prüfe deine Angaben:</strong></p>
+            <ul></ul>
+          </div>
+
+          <!-- STEP 1 -->
+          <fieldset class="book-step" id="step-leistung">
+            <legend><span class="step-no">1</span>Was möchtest du buchen?</legend>
+            <div class="svc-picks">
+              <label class="svc-pick"><input type="radio" name="leistung" value="besaitung" data-label="Besaitung"><span><strong>Besaitung</strong><small>Mit eigener oder ausgewählter Saite</small><em class="price-tag">ab 25 €</em></span></label>
+              <label class="svc-pick"><input type="radio" name="leistung" value="matching" data-label="Schläger-Matching"><span><strong>Schläger-Matching</strong><small>Ab zwei Schlägern</small><em class="price-tag">ab 60 €</em></span></label>
+              <label class="svc-pick"><input type="radio" name="leistung" value="tuning" data-label="Schläger-Tuning"><span><strong>Schläger-Tuning</strong><small>Gezielte Anpassung für dein Ziel</small><em class="price-tag">ab 40 €</em></span></label>
+              <label class="svc-pick"><input type="radio" name="leistung" value="beratung" data-label="Beratung"><span><strong>Beratung</strong><small>30 oder 60 Minuten, ohne weitere Leistung</small><em class="price-tag">ab 30 €</em></span></label>
+            </div>
+            <p class="field-error" id="leistung-err" hidden></p>
+          </fieldset>
+
+          <!-- STEP 2 -->
+          <fieldset class="book-step" id="step-details">
+            <legend><span class="step-no">2</span>Optionen</legend>
+            <p class="step-hint" data-details-empty>Wähle oben eine Leistung, dann erscheinen hier die passenden Optionen.</p>
+
+            <!-- shared: racket count (stringing, matching, tuning) -->
+            <div class="opt-row" data-show-for="besaitung matching tuning" hidden>
+              <div class="opt-text"><label class="field-label" for="anzahl">Anzahl Schläger</label><p class="field-help" data-matching-hint hidden>Matching ist ab zwei Schlägern möglich.</p></div>
+              <div class="stepper">
+                <button type="button" data-step="-1" aria-label="Einen Schläger weniger">−</button>
+                <input id="anzahl" name="anzahl" type="number" inputmode="numeric" min="1" max="12" value="1">
+                <button type="button" data-step="1" aria-label="Einen Schläger mehr">+</button>
+              </div>
+            </div>
+
+            <!-- matching / tuning: optional consulting -->
+            <div class="opt-row" data-show-for="matching" hidden>
+              <div class="opt-text"><span class="field-label" id="m-ber-label">30 Min. Beratung vorab</span><p class="field-help">Wir besprechen dein Spiel, bevor wir angleichen. <span class="opt-price" data-price="consult30">+25 €</span></p></div>
+              <div class="yesno" role="radiogroup" aria-labelledby="m-ber-label">
+                <label class="pill"><input type="radio" name="m_beratung" value="ja"><span>Ja</span></label>
+                <label class="pill"><input type="radio" name="m_beratung" value="nein" checked><span>Nein</span></label>
+              </div>
+            </div>
+            <div class="opt-row" data-show-for="tuning" hidden>
+              <div class="opt-text"><span class="field-label" id="t-ber-label">60 Min. Beratung vorab</span><p class="field-help">Spielanalyse und gemeinsames Tuning-Ziel – sehr empfohlen. <span class="opt-price" data-price="consult60">+45 €</span></p></div>
+              <div class="yesno" role="radiogroup" aria-labelledby="t-ber-label">
+                <label class="pill"><input type="radio" name="t_beratung" value="ja" checked><span>Ja</span></label>
+                <label class="pill"><input type="radio" name="t_beratung" value="nein"><span>Nein</span></label>
+              </div>
+            </div>
+
+            <!-- matching / tuning: stringing afterwards -->
+            <div class="opt-row" data-show-for="matching tuning" hidden>
+              <div class="opt-text"><span class="field-label" id="nach-label">Schläger anschließend besaiten</span><p class="field-help">Ohne Besaitung bekommst du deine Schläger unbesaitet zurück. Kombi-Preis: 5 € günstiger pro Schläger.</p></div>
+              <div class="yesno" role="radiogroup" aria-labelledby="nach-label">
+                <label class="pill"><input type="radio" name="besaiten" value="ja"><span>Ja</span></label>
+                <label class="pill"><input type="radio" name="besaiten" value="nein" checked><span>Nein</span></label>
+              </div>
+            </div>
+
+            <!-- own string (stringing, or stringing after matching/tuning) -->
+            <div class="opt-row" data-show-for="besaitung" data-show-if-stringing hidden>
+              <div class="opt-text"><span class="field-label" id="saite-label">Eigene Saite mitbringen</span><p class="field-help" data-saite-help>Ohne eigene Saite besaiten wir nach Absprache mit einer unserer ausgewählten Saiten (+5 € pro Schläger).</p></div>
+              <div class="yesno" role="radiogroup" aria-labelledby="saite-label">
+                <label class="pill"><input type="radio" name="saite" value="ja" checked><span>Ja</span></label>
+                <label class="pill"><input type="radio" name="saite" value="nein"><span>Nein</span></label>
+              </div>
+            </div>
+
+            <!-- stringing: optional consulting -->
+            <div class="opt-row" data-show-for="besaitung" hidden>
+              <div class="opt-text"><span class="field-label" id="b-ber-label">30 Min. Besaitungs-Beratung</span><p class="field-help">Welche Saite, welche Härte? Wir finden dein Setup. <span class="opt-price" data-price="consult30">+25 €</span></p></div>
+              <div class="yesno" role="radiogroup" aria-labelledby="b-ber-label">
+                <label class="pill"><input type="radio" name="b_beratung" value="ja"><span>Ja</span></label>
+                <label class="pill"><input type="radio" name="b_beratung" value="nein" checked><span>Nein</span></label>
+              </div>
+            </div>
+
+            <!-- consulting only -->
+            <div class="field" data-show-for="beratung" hidden>
+              <span class="field-label" id="dauer-label">Welche Beratung?</span>
+              <div class="dur-picks" role="radiogroup" aria-labelledby="dauer-label">
+                <label class="dur-pick"><input type="radio" name="dauer" value="30"><span><strong>30 Min. · Besaitungsfragen</strong><small>Saite, Härte und Setup für deinen Schläger</small><em class="price-tag">30 €</em></span></label>
+                <label class="dur-pick"><input type="radio" name="dauer" value="60" checked><span><strong>60 Min. · Spielanalyse &amp; Schläger-Optimierung</strong><small>Dein Spiel, deine Ziele und der passende Schläger</small><em class="price-tag">50 €</em></span></label>
+              </div>
+            </div>
+
+            <div class="field wish-field" data-show-for="besaitung matching tuning beratung" hidden>
+              <label class="field-label" for="wuensche">Deine Wünsche und Angaben <span class="opt" data-wish-opt>optional</span><span class="req" data-wish-req hidden aria-hidden="true">*</span></label>
+              <textarea id="wuensche" name="wuensche" rows="4" aria-describedby="wuensche-help wuensche-err" placeholder="z. B. gewünschte Besaitungshärte, Saitentyp, Schlägermodell, Spielniveau, Beschwerden im Arm …"></textarea>
+              <p class="field-help" id="wuensche-help" data-wish-help>Alles, was uns bei der Vorbereitung hilft.</p>
+              <p class="field-error" id="wuensche-err" hidden></p>
+            </div>
+          </fieldset>
+
+<!-- STEP 3 -->
+          <fieldset class="book-step" id="step-termin">
+            <legend><span class="step-no">3</span>Wunschtermin</legend>
+            <div class="field-row">
+              <div class="field">
+                <label class="field-label" for="datum">Wunschdatum <span class="opt">optional</span></label>
+                <input id="datum" name="datum" type="date">
+              </div>
+              <div class="field">
+                <span class="field-label" id="zeit-label">Tageszeit</span>
+                <div class="pills" role="group" aria-labelledby="zeit-label">
+                  <label class="pill"><input type="checkbox" name="zeit" value="Vormittag"><span>Vormittag</span></label>
+                  <label class="pill"><input type="checkbox" name="zeit" value="Nachmittag"><span>Nachmittag</span></label>
+                  <label class="pill"><input type="checkbox" name="zeit" value="Abend"><span>Abend</span></label>
+                </div>
+              </div>
+            </div>
+            <label class="check-line"><input type="checkbox" name="flexibel" id="flexibel"><span>Ich bin zeitlich flexibel</span></label>
+          </fieldset>
+
+          <!-- STEP 4 -->
+          <fieldset class="book-step" id="step-kontakt">
+            <legend><span class="step-no">4</span>Kontakt</legend>
+            <div class="field-row">
+              <div class="field">
+                <label class="field-label" for="name">Name <span class="req" aria-hidden="true">*</span></label>
+                <input id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-err">
+                <p class="field-error" id="name-err" hidden></p>
+              </div>
+              <div class="field">
+                <label class="field-label" for="email">E-Mail <span class="req" aria-hidden="true">*</span></label>
+                <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-err">
+                <p class="field-error" id="email-err" hidden></p>
+              </div>
+            </div>
+            <div class="field">
+              <label class="field-label" for="telefon">Telefon <span class="req" aria-hidden="true">*</span></label>
+              <input id="telefon" name="telefon" type="tel" autocomplete="tel" required aria-describedby="telefon-err">
+              <p class="field-error" id="telefon-err" hidden></p>
+            </div>
+            <label class="check-line"><input type="checkbox" name="consent" id="consent" required aria-describedby="consent-err"><span>Ich bin einverstanden, dass meine Angaben zur Bearbeitung der Anfrage verwendet werden. <span class="req" aria-hidden="true">*</span></span></label>
+            <p class="field-error" id="consent-err" hidden></p>
+          </fieldset>
+
+          <div class="book-submit">
+            <button class="btn btn-primary btn-lg" type="submit">Anfrage senden <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            <p>Unverbindlich. Den Termin bestätigen wir dir persönlich.</p>
+          </div>
+
+          <div class="book-success" hidden tabindex="-1" data-success>
+            <span class="success-icon"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg></span>
+            <h2 data-success-title>Danke für deine Anfrage!</h2>
+            <p data-success-text>Deine Anfrage ist bei uns angekommen. Wir melden uns persönlich mit einem Terminvorschlag.</p>
+            <p class="muted">Fragen? Schreib uns jederzeit an <a href="mailto:max.mustermann@example.com">max.mustermann@example.com</a>.</p>
+          </div>
+        </form>
+
+        <aside class="book-side" aria-label="Deine Auswahl">
+          <div class="book-how">
+            <p class="mono">So funktioniert's</p>
+            <h2>Jetzt anfragen, <span>später bezahlen.</span></h2>
+            <ul>
+              <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Du zahlst jetzt nichts.</strong> Deine Buchung ist eine unverbindliche Anfrage.</span></li>
+              <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Du siehst sofort den Richtpreis</strong> und weißt, womit du rechnen kannst.</span></li>
+              <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Wir melden uns persönlich</strong> und stimmen Leistung, Preis und Termin genau mit dir ab.</span></li>
+            </ul>
+          </div>
+
+          <div class="book-sticky">
+          <div class="book-summary">
+            <p class="mono">Deine Auswahl</p>
+            <ul class="sum-list" data-sum-list>
+              <li class="sum-empty">Noch keine Leistung gewählt.</li>
+            </ul>
+            <dl class="sum-meta">
+              <div><dt>Schläger</dt><dd data-sum-anzahl>–</dd></div>
+              <div><dt>Wunschtermin</dt><dd data-sum-termin>offen</dd></div>
+            </dl>
+            <div class="sum-total" data-sum-total hidden><span>Gesamt</span><strong data-sum-price>0 €</strong></div>
+            <p class="sum-note">Richtpreise. Den genauen Preis und Termin bestätigen wir dir persönlich, bevor etwas verbindlich wird.</p>
+          </div>
+
+          <div class="book-next">
+            <p class="mono">So geht's weiter</p>
+            <ol>
+              <li><b>1</b><span><strong>Anfrage senden</strong>Dauert keine zwei Minuten.</span></li>
+              <li><b>2</b><span><strong>Terminvorschlag erhalten</strong>Wir melden uns persönlich bei dir.</span></li>
+              <li><b>3</b><span><strong>Schläger bringen oder schicken</strong>In und um Hamburg am besten persönlich vorbeibringen, sonst per Post. Für Matching und Tuning am besten schon unbesaitet.</span></li>
+            </ol>
+          </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="logo logo-footer" href="index.html" aria-label="racket-lab.de – zur Startseite">
+          <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><rect x="0.75" y="0.75" width="62.5" height="62.5" rx="18" fill="#fbf8f4" stroke="#8a4b33" stroke-opacity=".28" stroke-width="1.5"/><image href="assets/img/logo-silhouette-lab.png" x="6.40" y="6.60" width="51.20" height="50.80"/></svg>
+          <span class="logo-text">racket<span class="logo-light">-lab</span><span class="logo-tld">.de</span></span>
+        </a>
+        <p class="footer-claim">Beratung und Service rund um deinen Schläger – aus Hamburg.<br>Gemessen. Verstanden. Abgestimmt.</p>
+      </div>
+      <nav aria-label="Footer: Tuning erklärt">
+        <h2 class="footer-h">Tuning erklärt</h2>
+        <ul>
+          <li><a href="index.html#tuning">Wie Tuning funktioniert</a></li>
+          <li><a href="index.html#kennwerte">Die Kennwerte</a></li>
+          <li><a href="index.html#warum">Warum es sich lohnt</a></li>
+          <li><a href="index.html#ergebnis">Das bekommst du</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Footer: Leistungen">
+        <h2 class="footer-h">Leistungen</h2>
+        <ul>
+          <li><a href="leistungen.html#matching">Schläger-Matching</a></li>
+          <li><a href="leistungen.html#tuning">Schläger-Tuning</a></li>
+          <li><a href="leistungen.html#stringing">Besaitung</a></li>
+          <li><a href="leistungen.html#consulting">Beratung</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Footer: Info">
+        <h2 class="footer-h">Info</h2>
+        <ul>
+          <li><a href="about.html">Über uns</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+          <li><a href="buchen.html" aria-current="page">Leistung buchen</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span data-year>2026</span> racket-lab.de</p>
+      <ul>
+        <li>Impressum</li>
+        <li>Datenschutz</li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+  <script src="booking.js" defer></script>
+</body>
+</html>

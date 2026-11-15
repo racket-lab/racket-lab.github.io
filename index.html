@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>racket-lab.de – Schläger-Tuning erklärt</title>
+  <meta name="description" content="Schläger-Tuning aus Hamburg, erklärt: Tuning-Simulator, die vier Kennwerte statisches Gewicht, Balance, Swingweight und Twistweight, warum sich Tuning lohnt und was du bekommst.">
+  <meta name="theme-color" content="#8a4b33">
+  <link rel="icon" href="assets/favicon.svg?v=3" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500;600;700;800&family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@500&family=Caveat:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19.5 12.6 12 20l-7.5-7.4A5 5 0 1 1 12 6a5 5 0 1 1 7.5 6.6Z"/><path d="M8 12h2l1.5-2.5 2 4.5 1.5-2h1"/></symbol>
+    <symbol id="i-gauge" viewBox="0 0 24 24"><path d="M12 14l4-4"/><path d="M3.3 19a10 10 0 1 1 17.4 0"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
+    <symbol id="i-flat" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+  </svg>
+
+  <header class="site-header" data-header>
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="racket-lab.de – zur Startseite">
+        <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><rect x="0.75" y="0.75" width="62.5" height="62.5" rx="18" fill="#fbf8f4" stroke="#8a4b33" stroke-opacity=".28" stroke-width="1.5"/><image href="assets/img/logo-silhouette-lab.png" x="6.40" y="6.60" width="51.20" height="50.80"/></svg>
+        <span class="logo-text">racket<span class="logo-light">-lab</span><span class="logo-tld">.de</span></span>
+      </a>
+      <nav class="main-nav" aria-label="Hauptnavigation" id="main-nav">
+        <ul>
+          <li class="has-sub">
+            <a href="index.html" aria-current="page">Tuning erklärt</a>
+            <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="sub-tuning"><svg class="ic" aria-hidden="true"><use href="#i-chevron"/></svg><span class="sr-only">Untermenü Tuning erklärt</span></button>
+            <ul class="sub" id="sub-tuning">
+              <li><a href="index.html#tuning">Wie Tuning funktioniert</a></li>
+              <li><a href="index.html#kennwerte">Die Kennwerte</a></li>
+              <li><a href="index.html#warum">Warum es sich lohnt</a></li>
+              <li><a href="index.html#ergebnis">Das bekommst du</a></li>
+            </ul>
+          </li>
+          <li class="has-sub">
+            <a href="leistungen.html">Leistungen</a>
+            <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="sub-services"><svg class="ic" aria-hidden="true"><use href="#i-chevron"/></svg><span class="sr-only">Untermenü Leistungen</span></button>
+            <ul class="sub" id="sub-services">
+              <li><a href="leistungen.html#matching">Schläger-Matching</a></li>
+              <li><a href="leistungen.html#tuning">Schläger-Tuning</a></li>
+              <li><a href="leistungen.html#stringing">Besaitung</a></li>
+              <li><a href="leistungen.html#consulting">Beratung</a></li>
+            </ul>
+          </li>
+          <li><a href="about.html">Über uns</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+          <li class="nav-book-li"><a class="nav-book" href="buchen.html">Leistung buchen <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" data-menu-toggle>
+        <svg class="ic ic-open" aria-hidden="true"><use href="#i-menu"/></svg>
+        <svg class="ic ic-close" aria-hidden="true"><use href="#i-close"/></svg>
+        <span class="sr-only">Menü</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero page-hero-compact" aria-labelledby="page-title">
+      <div class="page-hero-media" aria-hidden="true"><img src="assets/img/strings-macro.jpg" alt="" width="2000" height="1333" style="object-position:50% 45%"></div>
+      <div class="container">
+        <p class="eyebrow eyebrow-light">Nichts mehr dem Zufall überlassen</p>
+        <h1 id="page-title">Tuning erklärt</h1>
+        <p class="lead">Wie wir deinen Schläger verändern, was die Kennwerte bedeuten und warum sich das lohnt.</p>
+        <nav class="subnav tabs" aria-label="Themen">
+          <a href="#tuning" data-tab="tuning">Wie Tuning funktioniert</a>
+          <a href="#kennwerte" data-tab="kennwerte">Die Kennwerte</a>
+          <a href="#warum" data-tab="warum">Warum es sich lohnt</a>
+          <a href="#ergebnis" data-tab="ergebnis">Das bekommst du</a>
+        </nav>
+      </div>
+    </section>
+
+    <!-- TAB 1 -->
+    <section class="section tab-panel tuning-tab" id="tuning" data-panel aria-labelledby="tuning-title">
+      <div class="container">
+        <div class="section-head section-head-left">
+          <p class="eyebrow">Wie Tuning funktioniert</p>
+          <h2 id="tuning-title" class="h-lg">Tuning-Simulator</h2>
+          <p class="section-lead">Ein paar Gramm an der richtigen Stelle verändern, wie sich dein Schläger spielt.</p>
+        </div>
+
+        <div class="tsim" data-tsim>
+          <div class="tsim-photo"><div class="tsim-photo-inner">
+            <img src="assets/img/racket-clay-top.jpg?v=3" alt="Tennisschläger von oben auf dem Sandplatz" width="2000" height="1333" loading="lazy">
+            <span class="tsim-mark" data-mark="12" style="--x:58.9%;--y:6.6%"><b></b></span>
+            <span class="tsim-mark" data-mark="39" style="--x:69.8%;--y:29.1%"><b></b></span>
+            <span class="tsim-mark" data-mark="39" style="--x:48%;--y:29.1%"><b></b></span>
+            <span class="tsim-mark" data-mark="6" style="--x:58.9%;--y:51.3%"><b></b></span>
+            <span class="tsim-mark" data-mark="heart" style="--x:58.7%;--y:67%"><b></b></span>
+            <span class="tsim-mark" data-mark="grip" style="--x:59.1%;--y:84%"><b></b></span>
+          </div></div>
+
+          <div class="tsim-panel tsim-controls">
+            <p class="ws-kicker">Deine Stellschrauben</p>
+            <h3>Gewicht platzieren</h3>
+            <p class="tsim-hint">Regler nach oben ziehen für mehr, nach unten für weniger Gewicht.</p>
+            <ul class="knobs">
+              <li class="knob-row" data-row="12">
+                <div class="knob" role="slider" tabindex="0" data-knob="12" aria-label="Gewicht 12 Uhr" aria-valuemin="-10" aria-valuemax="10" aria-valuenow="0" aria-valuetext="0 Gramm">
+                  <svg viewBox="0 0 64 64" aria-hidden="true"><circle class="knob-track" cx="32" cy="32" r="26"/><path class="knob-arc" d=""/><circle class="knob-cap" cx="32" cy="32" r="19"/><line class="knob-ptr" x1="32" y1="32" x2="32" y2="17"/></svg>
+                </div>
+                <div class="knob-meta"><span class="knob-label">12 Uhr</span><span class="knob-sub">Kopfspitze</span></div>
+                <div class="knob-ctl">
+                  <output class="knob-val" data-val="12">0 g</output>
+                  <span class="knob-steps"><button type="button" data-step="-1" aria-label="12 Uhr – 1 Gramm weniger">&minus;</button><button type="button" data-step="1" aria-label="12 Uhr – 1 Gramm mehr">+</button></span>
+                </div>
+              </li>              <li class="knob-row" data-row="39">
+                <div class="knob" role="slider" tabindex="0" data-knob="39" aria-label="Gewicht 3 und 9 Uhr" aria-valuemin="-10" aria-valuemax="10" aria-valuenow="0" aria-valuetext="0 Gramm">
+                  <svg viewBox="0 0 64 64" aria-hidden="true"><circle class="knob-track" cx="32" cy="32" r="26"/><path class="knob-arc" d=""/><circle class="knob-cap" cx="32" cy="32" r="19"/><line class="knob-ptr" x1="32" y1="32" x2="32" y2="17"/></svg>
+                </div>
+                <div class="knob-meta"><span class="knob-label">3 und 9 Uhr</span><span class="knob-sub">Seiten am Kopf</span></div>
+                <div class="knob-ctl">
+                  <output class="knob-val" data-val="39">0 g</output>
+                  <span class="knob-steps"><button type="button" data-step="-1" aria-label="3 und 9 Uhr – 1 Gramm weniger">&minus;</button><button type="button" data-step="1" aria-label="3 und 9 Uhr – 1 Gramm mehr">+</button></span>
+                </div>
+              </li>              <li class="knob-row" data-row="6">
+                <div class="knob" role="slider" tabindex="0" data-knob="6" aria-label="Gewicht 6 Uhr" aria-valuemin="-10" aria-valuemax="10" aria-valuenow="0" aria-valuetext="0 Gramm">
+                  <svg viewBox="0 0 64 64" aria-hidden="true"><circle class="knob-track" cx="32" cy="32" r="26"/><path class="knob-arc" d=""/><circle class="knob-cap" cx="32" cy="32" r="19"/><line class="knob-ptr" x1="32" y1="32" x2="32" y2="17"/></svg>
+                </div>
+                <div class="knob-meta"><span class="knob-label">6 Uhr</span><span class="knob-sub">unten am Kopf</span></div>
+                <div class="knob-ctl">
+                  <output class="knob-val" data-val="6">0 g</output>
+                  <span class="knob-steps"><button type="button" data-step="-1" aria-label="6 Uhr – 1 Gramm weniger">&minus;</button><button type="button" data-step="1" aria-label="6 Uhr – 1 Gramm mehr">+</button></span>
+                </div>
+              </li>              <li class="knob-row" data-row="heart">
+                <div class="knob" role="slider" tabindex="0" data-knob="heart" aria-label="Gewicht Herz" aria-valuemin="-10" aria-valuemax="10" aria-valuenow="0" aria-valuetext="0 Gramm">
+                  <svg viewBox="0 0 64 64" aria-hidden="true"><circle class="knob-track" cx="32" cy="32" r="26"/><path class="knob-arc" d=""/><circle class="knob-cap" cx="32" cy="32" r="19"/><line class="knob-ptr" x1="32" y1="32" x2="32" y2="17"/></svg>
+                </div>
+                <div class="knob-meta"><span class="knob-label">Herz</span><span class="knob-sub">Schlägerhals</span></div>
+                <div class="knob-ctl">
+                  <output class="knob-val" data-val="heart">0 g</output>
+                  <span class="knob-steps"><button type="button" data-step="-1" aria-label="Herz – 1 Gramm weniger">&minus;</button><button type="button" data-step="1" aria-label="Herz – 1 Gramm mehr">+</button></span>
+                </div>
+              </li>              <li class="knob-row" data-row="grip">
+                <div class="knob" role="slider" tabindex="0" data-knob="grip" aria-label="Gewicht Griff" aria-valuemin="-10" aria-valuemax="10" aria-valuenow="0" aria-valuetext="0 Gramm">
+                  <svg viewBox="0 0 64 64" aria-hidden="true"><circle class="knob-track" cx="32" cy="32" r="26"/><path class="knob-arc" d=""/><circle class="knob-cap" cx="32" cy="32" r="19"/><line class="knob-ptr" x1="32" y1="32" x2="32" y2="17"/></svg>
+                </div>
+                <div class="knob-meta"><span class="knob-label">Griff</span><span class="knob-sub">im Griff / unterm Griffband</span></div>
+                <div class="knob-ctl">
+                  <output class="knob-val" data-val="grip">0 g</output>
+                  <span class="knob-steps"><button type="button" data-step="-1" aria-label="Griff – 1 Gramm weniger">&minus;</button><button type="button" data-step="1" aria-label="Griff – 1 Gramm mehr">+</button></span>
+                </div>
+              </li>            </ul>
+            <button type="button" class="tsim-reset" data-reset>Alles auf 0</button>
+          </div>
+
+          <div class="tsim-panel tsim-results">
+            <p class="ws-kicker">So verändert sich dein Schläger</p>
+            <ul class="res-list" aria-live="polite">
+              <li class="res" data-res="weight">
+                <span class="res-k">Statisches Gewicht</span>
+                <span class="res-v"><b data-v></b> <small>g</small></span>
+                <span class="res-d" data-d></span>
+                <span class="res-bar" aria-hidden="true"><i data-bar></i></span>
+                <span class="res-note" data-note></span>
+              </li>              <li class="res" data-res="balance">
+                <span class="res-k">Balance</span>
+                <span class="res-v"><b data-v></b> <small>cm</small></span>
+                <span class="res-d" data-d></span>
+                <span class="res-bar" aria-hidden="true"><i data-bar></i></span>
+                <span class="res-note" data-note></span>
+              </li>              <li class="res" data-res="sw">
+                <span class="res-k">Swingweight</span>
+                <span class="res-v"><b data-v></b> <small>kg·cm²</small></span>
+                <span class="res-d" data-d></span>
+                <span class="res-bar" aria-hidden="true"><i data-bar></i></span>
+                <span class="res-note" data-note></span>
+              </li>              <li class="res" data-res="tw">
+                <span class="res-k">Twistweight</span>
+                <span class="res-v"><b data-v></b> <small>kg·cm²</small></span>
+                <span class="res-d" data-d></span>
+                <span class="res-bar" aria-hidden="true"><i data-bar></i></span>
+                <span class="res-note" data-note></span>
+              </li>            </ul>
+            <p class="tsim-note">Richtwerte an einem Beispielschläger, keine exakten Angaben. Sie zeigen dir aber gut, was welche Stellschraube bewirkt.</p>
+          </div>
+        </div>
+        <div class="goal-trio">
+          <article class="goal-card">
+            <span class="goal-ic"><svg class="ic" aria-hidden="true"><use href="#i-sliders"/></svg></span>
+            <h3>Spielstil</h3>
+            <p>Mehr Kontrolle, mehr Power oder mehr Spin – abgestimmt darauf, wie du spielst.</p>
+          </article>
+          <article class="goal-card">
+            <span class="goal-ic"><svg class="ic" aria-hidden="true"><use href="#i-heart"/></svg></span>
+            <h3>Gesundheit</h3>
+            <p>Die richtige Masse und Saite nehmen Vibrationen aus dem Arm und entlasten Ellenbogen und Handgelenk.</p>
+          </article>
+          <article class="goal-card">
+            <span class="goal-ic"><svg class="ic" aria-hidden="true"><use href="#i-gauge"/></svg></span>
+            <h3>Performance</h3>
+            <p>Stabiler im Treffpunkt, schneller im Schwung, verlässlicher unter Druck.</p>
+          </article>
+        </div>
+
+        <div class="cta-band tuning-cta">
+          <div>
+            <h2>Welches Setup passt zu dir?</h2>
+            <p>Im Tuning-Termin messen wir deinen Schläger und finden es gemeinsam heraus.</p>
+          </div>
+          <a class="btn btn-light btn-lg" href="buchen.html#tuning">Schläger-Tuning buchen <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2 -->
+    <section class="section tab-panel" id="kennwerte" data-panel aria-labelledby="kennwerte-title">
+      <div class="container">
+        <div class="section-head section-head-left">
+          <p class="eyebrow">Die Kennwerte</p>
+          <h2 id="kennwerte-title" class="h-lg">Vier Werte. <span class="soft">Ein Gefühl auf dem Platz.</span></h2>
+        </div>
+        <div class="xp-grid">
+          <article class="xp-card">
+            <div class="xp-frame" data-explainer="static"></div>
+            <div class="xp-body">
+              <span class="xp-num">01</span>
+              <div>
+                <h3>Statisches Gewicht</h3>
+                <p>Das Gewicht des besaiteten Schlägers. Mehr Masse bringt Stabilität und Ruhe im Treffpunkt, kostet aber auch mehr Kraft.</p>
+              </div>
+            </div>
+          </article>
+          <article class="xp-card">
+            <div class="xp-frame" data-explainer="balance"></div>
+            <div class="xp-body">
+              <span class="xp-num">02</span>
+              <div>
+                <h3>Balance</h3>
+                <p>Wo der Schwerpunkt liegt, gemessen ab dem Griffende. Ein kopflastiger Schläger fühlt sich kraftvoll an, ein kopfleichter wendig und kontrolliert.</p>
+              </div>
+            </div>
+          </article>
+          <article class="xp-card">
+            <div class="xp-frame" data-explainer="swing"></div>
+            <div class="xp-body">
+              <span class="xp-num">03</span>
+              <div>
+                <h3>Swingweight <span class="tag">Oft unterschätzt</span></h3>
+                <p>Das Schwunggewicht: wie schwer sich der Schläger im Schwung anfühlt. Einer der wichtigsten Werte überhaupt, und trotzdem steht er selten im Datenblatt. Je niedriger das Swingweight, desto schneller kannst du den Schläger schwingen.</p>
+              </div>
+            </div>
+          </article>
+          <article class="xp-card">
+            <div class="xp-frame" data-explainer="twist"></div>
+            <div class="xp-body">
+              <span class="xp-num">04</span>
+              <div>
+                <h3>Twistweight <span class="tag">Selten angegeben</span></h3>
+                <p>Der Widerstand gegen Verdrehen – im Datenblatt genauso selten zu finden wie das Swingweight. Er bestimmt, wie stabil der Schläger im Treffpunkt bleibt und wie viel Spin du spielen kannst.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- TAB 3 -->
+    <section class="section tab-panel" id="warum" data-panel aria-labelledby="warum-title">
+      <div class="container">
+        <div class="section-head section-head-left">
+          <p class="eyebrow">Warum es sich lohnt</p>
+          <h2 id="warum-title" class="h-lg">Vier gute Gründe <span class="soft">für einen abgestimmten Schläger.</span></h2>
+        </div>
+        <div class="why-cards">
+          <article class="why-card">
+            <div class="why-media"><img src="assets/img/racket-matching-hq.avif" alt="Sechs Schläger desselben Modells nebeneinander" width="900" height="1176" loading="lazy" style="object-position:50% 45%"></div>
+            <div class="why-body">
+              <h3>Gleiches Modell, anderes Gefühl</h3>
+              <p>Zwei Schläger desselben Modells sind ab Werk selten wirklich gleich. Gewicht, Balance und Schwunggewicht weichen oft spürbar voneinander ab – und damit auch, wie sich jeder Schläger spielt.</p>
+            </div>
+          </article>
+          <article class="why-card">
+            <div class="why-media"><img src="assets/img/arm-forearm.jpg" alt="Hand umfasst den Unterarm, um Beschwerden zu lindern" width="1280" height="720" loading="lazy" style="object-position:50% 45%"></div>
+            <div class="why-body">
+              <h3>Entlastung für deinen Arm</h3>
+              <p>Beschwerden entstehen oft durch eine ungünstige Kombination aus Material, Schlägereigenschaften und Spielstil. Die richtige Abstimmung kann deinen Arm entlasten.</p>
+            </div>
+          </article>
+          <article class="why-card">
+            <div class="why-media"><img src="assets/img/backhand-player.jpg" alt="Rückhandschlag auf dem Tennisplatz" width="1400" height="933" loading="lazy" style="object-position:35% 50%"></div>
+            <div class="why-body">
+              <h3>Hol mehr aus deinem Spiel raus</h3>
+              <p>Wenn Schläger und Spielstil zusammenpassen, triffst du sauberer, kontrollierter und mit mehr Selbstvertrauen. Oft machen schon wenige Gramm an der richtigen Stelle einen deutlichen Unterschied.</p>
+            </div>
+          </article>
+          <article class="why-card">
+            <div class="why-media"><img src="assets/img/pro-clay-stadium.jpg" alt="Profi-Match auf dem Sandplatz im vollen Stadion, an der Bank die Schlägertaschen" width="1100" height="1650" loading="lazy" style="object-position:50% 46%"></div>
+            <div class="why-body">
+              <h3 lang="en">The Pros are doing it!</h3>
+              <p>Auf der Profi-Tour spielt kaum jemand einen Schläger direkt aus dem Laden. Die Profis lassen ihre Schläger vermessen, angleichen und genau auf ihr Spiel abstimmen – damit sich jeder Schläger in der Tasche gleich anfühlt.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4 -->
+    <section class="section tab-panel" id="ergebnis" data-panel aria-labelledby="ergebnis-title">
+      <div class="container">
+        <div class="section-head section-head-left">
+          <p class="eyebrow">Das bekommst du</p>
+          <h2 id="ergebnis-title" class="h-lg">Gemessen, angepasst, <span class="soft">dokumentiert.</span></h2>
+          <p class="section-lead">Nach jedem Matching und Tuning bekommst du ein Zertifikat mit allen Werten und jeder Anpassung, schwarz auf weiß.</p>
+        </div>
+
+        <ol class="measure-steps">
+          <li><b>1</b><span><strong>Vorher messen</strong>unbesaitet, jeder Schläger einzeln</span></li>
+          <li><b>2</b><span><strong>Anpassen und nachmessen</strong>wieder unbesaitet, bis die Werte stimmen</span></li>
+          <li><b>3</b><span><strong>Besaitet messen</strong>optional, wenn wir auch besaiten</span></li>
+        </ol>
+
+        <div class="result-grid">
+          <figure class="cert-stage">
+            <article class="doc" aria-label="Beispiel eines Matching-Zertifikats">
+              <span class="doc-watermark" aria-hidden="true">Muster</span>
+              <header class="doc-head">
+                <div class="doc-brand">
+                  <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><rect x="0.75" y="0.75" width="62.5" height="62.5" rx="18" fill="#fbf8f4" stroke="#8a4b33" stroke-opacity=".28" stroke-width="1.5"/><image href="assets/img/logo-silhouette-lab.png" x="6.40" y="6.60" width="51.20" height="50.80"/></svg>
+                  <span><b>racket-lab.de</b><small>Schlägerberatung &amp; Schlägerservice</small></span>
+                </div>
+                <dl class="doc-ref">
+                  <div><dt>Auftrag</dt><dd>2026-0147</dd></div>
+                  <div><dt>Datum</dt><dd>14.11.2026</dd></div>
+                </dl>
+              </header>
+
+              <h3 class="doc-title">Matching-Zertifikat <span>Messprotokoll</span></h3>
+
+              <dl class="doc-info">
+                <div><dt>Name</dt><dd>Alex Muster</dd></div>
+                <div><dt>Schläger</dt><dd>3 × gleiches Modell, Griffstärke 3</dd></div>
+                <div><dt>Leistung</dt><dd>Schläger-Matching</dd></div>
+                <div><dt>Referenz</dt><dd>Schläger 3 (schwerster)</dd></div>
+              </dl>
+
+              <section class="doc-sec">
+                <h4><span>1</span> Messwerte unbesaitet</h4>
+                <table class="doc-table">
+                  <caption class="sr-only">Messwerte unbesaitet vor und nach dem Matching</caption>
+                  <thead><tr><th scope="col">Schläger</th><th scope="col"></th><th scope="col">Gewicht <small>g</small></th><th scope="col">Balance <small>cm</small></th><th scope="col">SW <small>kg·cm²</small></th><th scope="col">TW <small>kg·cm²</small></th></tr></thead>
+                  <tbody>
+                    <tr class="pre"><th scope="rowgroup" rowspan="2">1</th><td>vorher</td><td>301,4</td><td>31,5</td><td>297</td><td>13,4</td></tr>
+                    <tr class="post"><td>nachher</td><td>304,7</td><td>31,8</td><td>305</td><td>13,7</td></tr>
+                    <tr class="pre"><th scope="rowgroup" rowspan="2">2</th><td>vorher</td><td>303,2</td><td>31,9</td><td>302</td><td>13,6</td></tr>
+                    <tr class="post"><td>nachher</td><td>304,9</td><td>31,8</td><td>305</td><td>13,7</td></tr>
+                    <tr class="pre"><th scope="rowgroup" rowspan="2">3</th><td>vorher</td><td>304,8</td><td>31,8</td><td>305</td><td>13,7</td></tr>
+                    <tr class="post"><td>nachher</td><td>304,8</td><td>31,8</td><td>305</td><td>13,7</td></tr>
+                  </tbody>
+                  <tfoot>
+                    <tr><th scope="row" rowspan="2">Max. Abw.</th><td>vorher</td><td>3,4</td><td>0,4</td><td>8</td><td>0,3</td></tr>
+                    <tr class="ok"><td>nachher</td><td>0,2</td><td>0,0</td><td>0</td><td>0,0</td></tr>
+                  </tfoot>
+                </table>
+              </section>
+
+              <section class="doc-sec">
+                <h4><span>2</span> Durchgeführte Anpassungen</h4>
+                <table class="doc-table doc-adj">
+                  <caption class="sr-only">Anpassungen je Schläger</caption>
+                  <thead><tr><th scope="col">Schläger</th><th scope="col">Position</th><th scope="col">Material</th><th scope="col">Menge</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row" rowspan="3">1</th><td>12 Uhr</td><td>Bleiband</td><td>1,0 g</td></tr>
+                    <tr><td>3 und 9 Uhr</td><td>Bleiband</td><td>je 0,6 g</td></tr>
+                    <tr><td>Griff</td><td>Silikon</td><td>1,1 g</td></tr>
+                    <tr><th scope="row" rowspan="2">2</th><td>12 Uhr</td><td>Bleiband</td><td>0,6 g</td></tr>
+                    <tr><td>3 und 9 Uhr</td><td>Bleiband</td><td>je 0,3 g</td></tr>
+                    <tr><th scope="row">3</th><td colspan="3">Referenz, unverändert</td></tr>
+                  </tbody>
+                </table>
+              </section>
+
+              <section class="doc-sec">
+                <h4><span>3</span> Messwerte besaitet <em>optional</em></h4>
+                <p class="doc-string">Polyester 1,25 mm · Härte 23/22 kg</p>
+                <table class="doc-table">
+                  <caption class="sr-only">Messwerte nach der Besaitung</caption>
+                  <thead><tr><th scope="col">Schläger</th><th scope="col">Gewicht <small>g</small></th><th scope="col">Balance <small>cm</small></th><th scope="col">SW <small>kg·cm²</small></th><th scope="col">TW <small>kg·cm²</small></th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">1</th><td>321,5</td><td>33,0</td><td>324</td><td>14,4</td></tr>
+                    <tr><th scope="row">2</th><td>321,7</td><td>33,0</td><td>324</td><td>14,4</td></tr>
+                    <tr><th scope="row">3</th><td>321,6</td><td>33,0</td><td>325</td><td>14,4</td></tr>
+                  </tbody>
+                </table>
+              </section>
+
+              <p class="doc-method">Alle Werte ohne Besaitung gemessen, sofern nicht anders angegeben. Balance ab Griffende. SW = Swingweight (Achse 10 cm über dem Griffende), TW = Twistweight. Gewicht mit Präzisionswaage, Auflösung 0,1 g.</p>
+              <footer class="doc-foot">
+                <span>racket-lab.de · max.mustermann@example.com</span>
+                <span>Auftrag 2026-0147 · Seite 1 von 1</span>
+              </footer>
+            </article>
+          </figure>
+
+          <aside class="tools" aria-labelledby="tools-title">
+            <h3 id="tools-title" class="tools-title">Unsere Werkzeuge</h3>
+            <ul class="tool-list">
+              <li class="tool">
+                <div class="tool-img"><img src="assets/img/swingweight-device.jpg" alt="Swingweight-Messgerät mit Schlägerwiege und Klettband" width="554" height="554" loading="lazy"></div>
+                <div class="tool-body"><span class="tool-k">Swingweight · Twistweight</span><h4>Swingweight-Messgerät</h4><p>Federgetriebene Wiege, in die der Schläger am Griff eingespannt wird. Das Smartphone misst die Schwingung.</p></div>
+              </li>
+              <li class="tool">
+                <div class="tool-img"><img src="assets/img/balance-measure.jpg" alt="Schläger auf der Balance-Vorrichtung mit Präzisionswaage und Smartphone" width="554" height="554" loading="lazy"></div>
+                <div class="tool-body"><span class="tool-k">Balance · Gewicht</span><h4>Balance-Vorrichtung und Präzisionswaage</h4><p>Misst Balance und Gewicht, genau auf 0,1 g.</p></div>
+              </li>
+              <li class="tool">
+                <div class="tool-img"><img src="assets/img/stringing-machine.jpg" alt="Elektronische Besaitungsmaschine mit Linearzug" width="800" height="600" loading="lazy"></div>
+                <div class="tool-body"><span class="tool-k">Besaitung</span><h4>Besaitungsmaschine</h4><p>Elektronischer Linearzug für eine konstante, exakt eingestellte Besaitungshärte.</p></div>
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </div>    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="logo logo-footer" href="index.html" aria-label="racket-lab.de – zur Startseite">
+          <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><rect x="0.75" y="0.75" width="62.5" height="62.5" rx="18" fill="#fbf8f4" stroke="#8a4b33" stroke-opacity=".28" stroke-width="1.5"/><image href="assets/img/logo-silhouette-lab.png" x="6.40" y="6.60" width="51.20" height="50.80"/></svg>
+          <span class="logo-text">racket<span class="logo-light">-lab</span><span class="logo-tld">.de</span></span>
+        </a>
+        <p class="footer-claim">Beratung und Service rund um deinen Schläger – aus Hamburg.<br>Gemessen. Verstanden. Abgestimmt.</p>
+      </div>
+      <nav aria-label="Footer: Tuning erklärt">
+        <h2 class="footer-h">Tuning erklärt</h2>
+        <ul>
+          <li><a href="index.html#tuning">Wie Tuning funktioniert</a></li>
+          <li><a href="index.html#kennwerte">Die Kennwerte</a></li>
+          <li><a href="index.html#warum">Warum es sich lohnt</a></li>
+          <li><a href="index.html#ergebnis">Das bekommst du</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Footer: Leistungen">
+        <h2 class="footer-h">Leistungen</h2>
+        <ul>
+          <li><a href="leistungen.html#matching">Schläger-Matching</a></li>
+          <li><a href="leistungen.html#tuning">Schläger-Tuning</a></li>
+          <li><a href="leistungen.html#stringing">Besaitung</a></li>
+          <li><a href="leistungen.html#consulting">Beratung</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Footer: Info">
+        <h2 class="footer-h">Info</h2>
+        <ul>
+          <li><a href="about.html">Über uns</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+          <li><a href="buchen.html">Leistung buchen</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span data-year>2026</span> racket-lab.de</p>
+      <ul>
+        <li>Impressum</li>
+        <li>Datenschutz</li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+  <script src="tuning-sim.js" defer></script>
+  <script src="explainer.js" defer></script>
+</body>
+</html>
