@@ -212,6 +212,8 @@ button, input, select, textarea { font: inherit; color: inherit; }
 }
 .hero-media { position: absolute; inset: 0; z-index: -2; }
 .bg-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.bg-video::-webkit-media-controls-start-playback-button,
+.bg-video::-webkit-media-controls { display: none !important; -webkit-appearance: none; } /* iOS: kein Play-Symbol über Hintergrundvideos */
 .hero-media .bg-video { object-position: 50% 92%; }
 /* portrait drone video turned 90° so the court lies across the header */
 .page-hero-media-rotate { container-type: size; overflow: hidden; }

@@ -71,10 +71,18 @@
     v.addEventListener('timeupdate', () => { if (v.currentTime < start - 0.05) v.currentTime = start; });
   });
   if (!reduceMotion && 'IntersectionObserver' in window) {
+    const visible = new Set();
     const vio = new IntersectionObserver((entries) => {
-      entries.forEach((en) => { if (en.isIntersecting) en.target.play().catch(() => {}); else en.target.pause(); });
+      entries.forEach((en) => {
+        if (en.isIntersecting) { visible.add(en.target); en.target.play().catch(() => {}); }
+        else { visible.delete(en.target); en.target.pause(); }
+      });
     }, { rootMargin: '120px 0px' });
-    videos.forEach((v) => vio.observe(v));
+    videos.forEach((v) => { v.muted = true; vio.observe(v); });
+    /* iPhone im Stromsparmodus blockiert Autoplay; nach der ersten Berührung dürfen Videos starten.
+       Bis dahin zeigt das poster-Standbild. */
+    const kick = () => visible.forEach((v) => { if (v.paused) v.play().catch(() => {}); });
+    ['touchstart', 'click', 'scroll'].forEach((ev) => window.addEventListener(ev, kick, { passive: true }));
   }
 
   /* ---------- reveal on scroll ---------- */
