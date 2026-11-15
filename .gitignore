@@ -1,0 +1,9 @@
+# Nur die eigentliche Website geht zu GitHub (alles andere bleibt lokal).
+# Neue Dateien/Ordner, die online sollen, hier mit "!" freigeben.
+/*
+!/.gitignore
+!/*.html
+!/*.js
+!/styles.css
+!/assets/
+!/Videos/
