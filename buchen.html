@@ -35,24 +35,15 @@
             <a href="index.html">Konzept &amp; Tuning</a>
             <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="sub-tuning"><svg class="ic" aria-hidden="true"><use href="#i-chevron"/></svg><span class="sr-only">Untermenü Konzept und Tuning</span></button>
             <ul class="sub" id="sub-tuning">
-              <li><a href="index.html#konzept">Unser Konzept</a></li>
+              <li><a href="index.html#konzept">Das Konzept</a></li>
               <li><a href="index.html#tuning">Tuning-Simulator</a></li>
               <li><a href="index.html#kennwerte">Worauf es ankommt</a></li>
               <li><a href="index.html#warum">Warum es sich lohnt</a></li>
+              <li><a href="index.html#leistungen">Leistungen</a></li>
               <li><a href="index.html#ergebnis">Das bekommst du</a></li>
             </ul>
           </li>
-          <li class="has-sub">
-            <a href="leistungen.html">Leistungen</a>
-            <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="sub-services"><svg class="ic" aria-hidden="true"><use href="#i-chevron"/></svg><span class="sr-only">Untermenü Leistungen</span></button>
-            <ul class="sub" id="sub-services">
-              <li><a href="leistungen.html#matching">Schläger-Matching</a></li>
-              <li><a href="leistungen.html#tuning">Schläger-Tuning</a></li>
-              <li><a href="leistungen.html#stringing">Besaitung</a></li>
-              <li><a href="leistungen.html#consulting">Beratung</a></li>
-            </ul>
-          </li>
-          <li><a href="about.html">Über uns</a></li>
+          <li><a href="about.html">Hintergrund</a></li>
           <li><a href="kontakt.html">Kontakt</a></li>
           <li class="nav-book-li"><a class="nav-book" href="buchen.html" aria-current="page">Leistung buchen <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
         </ul>
@@ -75,7 +66,7 @@
       <div class="container">
         <p class="eyebrow eyebrow-light">Termin sichern</p>
         <h1 id="page-title">Leistung buchen</h1>
-        <p class="lead">Stell dir deine Leistung zusammen. Wir melden uns persönlich mit einem Terminvorschlag – die Anfrage ist unverbindlich.</p>
+        <p class="lead">Stell dir deine Leistung zusammen. Du bekommst persönlich einen Terminvorschlag – die Anfrage ist unverbindlich.</p>
       </div>
     </section>
 
@@ -116,7 +107,7 @@
 
             <!-- matching / tuning: optional consulting -->
             <div class="opt-row" data-show-for="matching" hidden>
-              <div class="opt-text"><span class="field-label" id="m-ber-label">30 Min. Beratung vorab</span><p class="field-help">Wir besprechen dein Spiel, bevor wir angleichen. <span class="opt-price" data-price="consult30">+25 €</span></p></div>
+              <div class="opt-text"><span class="field-label" id="m-ber-label">30 Min. Beratung vorab</span><p class="field-help">Erst dein Spiel besprechen, dann angleichen. <span class="opt-price" data-price="consult30">+25 €</span></p></div>
               <div class="yesno" role="radiogroup" aria-labelledby="m-ber-label">
                 <label class="pill"><input type="radio" name="m_beratung" value="ja"><span>Ja</span></label>
                 <label class="pill"><input type="radio" name="m_beratung" value="nein" checked><span>Nein</span></label>
@@ -141,7 +132,7 @@
 
             <!-- own string (stringing, or stringing after matching/tuning) -->
             <div class="opt-row" data-show-for="besaitung" data-show-if-stringing hidden>
-              <div class="opt-text"><span class="field-label" id="saite-label">Eigene Saite mitbringen</span><p class="field-help" data-saite-help>Ohne eigene Saite besaiten wir nach Absprache mit einer unserer ausgewählten Saiten (+5 € pro Schläger).</p></div>
+              <div class="opt-text"><span class="field-label" id="saite-label">Eigene Saite mitbringen</span><p class="field-help" data-saite-help>Ohne eigene Saite wird nach Absprache mit einer ausgewählten Saite besaitet (+5 € pro Schläger).</p></div>
               <div class="yesno" role="radiogroup" aria-labelledby="saite-label">
                 <label class="pill"><input type="radio" name="saite" value="ja" checked><span>Ja</span></label>
                 <label class="pill"><input type="radio" name="saite" value="nein"><span>Nein</span></label>
@@ -150,7 +141,7 @@
 
             <!-- stringing: optional consulting -->
             <div class="opt-row" data-show-for="besaitung" hidden>
-              <div class="opt-text"><span class="field-label" id="b-ber-label">30 Min. Besaitungs-Beratung</span><p class="field-help">Welche Saite, welche Härte? Wir finden dein Setup. <span class="opt-price" data-price="consult30">+25 €</span></p></div>
+              <div class="opt-text"><span class="field-label" id="b-ber-label">30 Min. Besaitungs-Beratung</span><p class="field-help">Welche Saite, welche Härte? Gemeinsam zum passenden Setup. <span class="opt-price" data-price="consult30">+25 €</span></p></div>
               <div class="yesno" role="radiogroup" aria-labelledby="b-ber-label">
                 <label class="pill"><input type="radio" name="b_beratung" value="ja"><span>Ja</span></label>
                 <label class="pill"><input type="radio" name="b_beratung" value="nein" checked><span>Nein</span></label>
@@ -169,7 +160,7 @@
             <div class="field wish-field" data-show-for="besaitung matching tuning beratung" hidden>
               <label class="field-label" for="wuensche">Deine Wünsche und Angaben <span class="opt" data-wish-opt>optional</span><span class="req" data-wish-req hidden aria-hidden="true">*</span></label>
               <textarea id="wuensche" name="wuensche" rows="4" aria-describedby="wuensche-help wuensche-err" placeholder="z. B. gewünschte Besaitungshärte, Saitentyp, Schlägermodell, Spielniveau, Beschwerden im Arm …"></textarea>
-              <p class="field-help" id="wuensche-help" data-wish-help>Alles, was uns bei der Vorbereitung hilft.</p>
+              <p class="field-help" id="wuensche-help" data-wish-help>Alles, was bei der Vorbereitung hilft.</p>
               <p class="field-error" id="wuensche-err" hidden></p>
             </div>
           </fieldset>
@@ -220,14 +211,14 @@
 
           <div class="book-submit">
             <button class="btn btn-primary btn-lg" type="submit">Anfrage senden <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></button>
-            <p>Unverbindlich. Den Termin bestätigen wir dir persönlich.</p>
+            <p>Unverbindlich. Den Termin bekommst du persönlich bestätigt.</p>
           </div>
 
           <div class="book-success" hidden tabindex="-1" data-success>
             <span class="success-icon"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg></span>
             <h2 data-success-title>Danke für deine Anfrage!</h2>
-            <p data-success-text>Deine Anfrage ist bei uns angekommen. Wir melden uns persönlich mit einem Terminvorschlag.</p>
-            <p class="muted">Fragen? Schreib uns jederzeit an <a href="mailto:max.mustermann@example.com">max.mustermann@example.com</a>.</p>
+            <p data-success-text>Deine Anfrage ist angekommen. Du bekommst persönlich einen Terminvorschlag.</p>
+            <p class="muted">Fragen? Schreib jederzeit an <a href="mailto:max.mustermann@example.com">max.mustermann@example.com</a>.</p>
           </div>
         </form>
 
@@ -238,7 +229,7 @@
             <ul>
               <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Du zahlst jetzt nichts.</strong> Deine Buchung ist eine unverbindliche Anfrage.</span></li>
               <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Du siehst sofort den Richtpreis</strong> und weißt, womit du rechnen kannst.</span></li>
-              <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Wir melden uns persönlich</strong> und stimmen Leistung, Preis und Termin genau mit dir ab.</span></li>
+              <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Persönliche Abstimmung:</strong> Leistung, Preis und Termin werden genau mit dir abgestimmt.</span></li>
             </ul>
           </div>
 
@@ -253,14 +244,14 @@
               <div><dt>Wunschtermin</dt><dd data-sum-termin>offen</dd></div>
             </dl>
             <div class="sum-total" data-sum-total hidden><span>Gesamt</span><strong data-sum-price>0 €</strong></div>
-            <p class="sum-note">Richtpreise. Den genauen Preis und Termin bestätigen wir dir persönlich, bevor etwas verbindlich wird.</p>
+            <p class="sum-note">Richtpreise. Genauer Preis und Termin werden dir persönlich bestätigt, bevor etwas verbindlich wird.</p>
           </div>
 
           <div class="book-next">
             <p class="mono">So geht's weiter</p>
             <ol>
               <li><b>1</b><span><strong>Anfrage senden</strong>Dauert keine zwei Minuten.</span></li>
-              <li><b>2</b><span><strong>Terminvorschlag erhalten</strong>Wir melden uns persönlich bei dir.</span></li>
+              <li><b>2</b><span><strong>Terminvorschlag erhalten</strong>Du bekommst eine persönliche Rückmeldung.</span></li>
               <li><b>3</b><span><strong>Schläger bringen oder schicken</strong>In und um Hamburg am besten persönlich vorbeibringen, sonst per Post. Für Matching und Tuning am besten schon unbesaitet.</span></li>
             </ol>
           </div>
@@ -282,26 +273,27 @@
       <nav aria-label="Footer: Konzept und Tuning">
         <h2 class="footer-h">Konzept &amp; Tuning</h2>
         <ul>
-          <li><a href="index.html#konzept">Unser Konzept</a></li>
+          <li><a href="index.html#konzept">Das Konzept</a></li>
           <li><a href="index.html#tuning">Tuning-Simulator</a></li>
           <li><a href="index.html#kennwerte">Worauf es ankommt</a></li>
           <li><a href="index.html#warum">Warum es sich lohnt</a></li>
+          <li><a href="index.html#leistungen">Leistungen</a></li>
           <li><a href="index.html#ergebnis">Das bekommst du</a></li>
         </ul>
       </nav>
       <nav aria-label="Footer: Leistungen">
         <h2 class="footer-h">Leistungen</h2>
         <ul>
-          <li><a href="leistungen.html#matching">Schläger-Matching</a></li>
-          <li><a href="leistungen.html#tuning">Schläger-Tuning</a></li>
-          <li><a href="leistungen.html#stringing">Besaitung</a></li>
-          <li><a href="leistungen.html#consulting">Beratung</a></li>
+          <li><a href="index.html#svc-matching">Schläger-Matching</a></li>
+          <li><a href="index.html#svc-tuning">Schläger-Tuning</a></li>
+          <li><a href="index.html#svc-stringing">Besaitung</a></li>
+          <li><a href="index.html#svc-consulting">Beratung</a></li>
         </ul>
       </nav>
       <nav aria-label="Footer: Info">
         <h2 class="footer-h">Info</h2>
         <ul>
-          <li><a href="about.html">Über uns</a></li>
+          <li><a href="about.html">Hintergrund</a></li>
           <li><a href="kontakt.html">Kontakt</a></li>
           <li><a href="buchen.html" aria-current="page">Leistung buchen</a></li>
         </ul>

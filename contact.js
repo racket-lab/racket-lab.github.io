@@ -16,7 +16,7 @@
     { id: 'c-name', test: (el) => el.value.trim().length > 1, msg: 'Bitte gib deinen Namen an.' },
     { id: 'c-email', test: (el) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim()), msg: 'Bitte gib eine gültige E-Mail-Adresse an.' },
     { id: 'c-tel', test: (el) => el.value.replace(/[^\d]/g, '').length >= 6, msg: 'Bitte gib deine Telefonnummer an.' },
-    { id: 'c-msg', test: (el) => el.value.trim().length > 4, msg: 'Bitte schreib uns kurz, worum es geht.' },
+    { id: 'c-msg', test: (el) => el.value.trim().length > 4, msg: 'Bitte schreib kurz, worum es geht.' },
     { id: 'c-consent', test: (el) => el.checked, msg: 'Bitte bestätige die Einwilligung.' },
   ];
 
@@ -97,7 +97,7 @@
     } catch {
       btn.disabled = false;
       btn.innerHTML = label;
-      list.innerHTML = `<li>Das Senden hat leider nicht geklappt. Bitte versuch es noch einmal oder schreib uns direkt an <a href="mailto:${MAIL}">${MAIL}</a>.</li>`;
+      list.innerHTML = `<li>Das Senden hat leider nicht geklappt. Bitte versuch es noch einmal oder schreib direkt an <a href="mailto:${MAIL}">${MAIL}</a>.</li>`;
       summary.hidden = false;
       summary.focus();
     }

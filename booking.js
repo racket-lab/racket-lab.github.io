@@ -117,7 +117,7 @@
     $('[data-details-empty]').hidden = !!s;
     if (s === 'matching' && (parseInt(anzahl.value, 10) || 1) < 2) anzahl.value = 2;
     $('[data-matching-hint]').hidden = s !== 'matching';
-    $('[data-saite-help]').textContent = `Ohne eigene Saite besaiten wir nach Absprache mit einer unserer ausgewählten Saiten (+${eur(PRICE.stringOurs - PRICE.stringOwn)} pro Schläger).`;
+    $('[data-saite-help]').textContent = `Ohne eigene Saite wird nach Absprache mit einer ausgewählten Saite besaitet (+${eur(PRICE.stringOurs - PRICE.stringOwn)} pro Schläger).`;
 
     // wishes: required for tuning without consulting
     const req = wishRequired();
@@ -125,8 +125,8 @@
     $('[data-wish-req]').hidden = !req;
     $('#wuensche').required = req;
     $('[data-wish-help]').textContent = req
-      ? 'Ohne Beratung brauchen wir deine Angaben: Was soll sich am Schläger verändern (z. B. mehr Kontrolle, mehr Komfort), welcher Schläger, welches Spielniveau, welche Beschwerden?'
-      : 'Alles, was uns bei der Vorbereitung hilft – z. B. Besaitungshärte, Saitentyp, Schlägermodell oder Spielniveau.';
+      ? 'Ohne Beratung sind deine Angaben wichtig: Was soll sich am Schläger verändern (z. B. mehr Kontrolle, mehr Komfort), welcher Schläger, welches Spielniveau, welche Beschwerden?'
+      : 'Alles, was bei der Vorbereitung hilft – z. B. Besaitungshärte, Saitentyp, Schlägermodell oder Spielniveau.';
     if (!req && !$('#wuensche-err').hidden) validate('wuensche');
 
     const list = items();
@@ -143,7 +143,7 @@
   const rules = {
     leistung: () => (!service() ? 'Bitte wähle eine Leistung.' : ''),
     wuensche: () => (wishRequired() && form.elements.wuensche.value.trim().length < 10
-      ? 'Ohne Beratung brauchen wir ein paar Angaben: Was wünschst du dir vom Tuning?' : ''),
+      ? 'Ohne Beratung braucht es ein paar Angaben: Was wünschst du dir vom Tuning?' : ''),
     name: () => (form.elements.name.value.trim().length < 2 ? 'Bitte gib deinen Namen ein.' : ''),
     email: () => {
       const v = form.elements.email.value.trim();
@@ -155,7 +155,7 @@
       if (!digits) return 'Bitte gib deine Telefonnummer ein.';
       return digits.length < 6 ? 'Bitte prüfe die Telefonnummer.' : '';
     },
-    consent: () => (!form.elements.consent.checked ? 'Bitte bestätige die Einwilligung, damit wir antworten können.' : ''),
+    consent: () => (!form.elements.consent.checked ? 'Bitte bestätige die Einwilligung, damit eine Antwort möglich ist.' : ''),
   };
   const focusTarget = { leistung: services[0], wuensche: form.elements.wuensche, name: form.elements.name, email: form.elements.email, telefon: form.elements.telefon, consent: form.elements.consent };
   function validate(key) {
@@ -246,10 +246,10 @@
       });
       const data = await res.json();
       if (!res.ok || String(data.success) !== 'true') throw new Error(data.message || 'send failed');
-      showSuccess('Danke für deine Anfrage!', 'Deine Anfrage ist bei uns angekommen. Wir melden uns persönlich mit einem Terminvorschlag.');
+      showSuccess('Danke für deine Anfrage!', 'Deine Anfrage ist angekommen. Du bekommst persönlich einen Terminvorschlag.');
     } catch (err) {
       btn.disabled = false; btn.innerHTML = label;
-      summaryBox.querySelector('ul').innerHTML = `<li>Das Senden hat leider nicht geklappt. Bitte versuche es erneut oder schreib uns an <a href="mailto:${MAIL}">${MAIL}</a>.</li>`;
+      summaryBox.querySelector('ul').innerHTML = `<li>Das Senden hat leider nicht geklappt. Bitte versuche es erneut oder schreib an <a href="mailto:${MAIL}">${MAIL}</a>.</li>`;
       summaryBox.hidden = false; summaryBox.focus();
     }
   });

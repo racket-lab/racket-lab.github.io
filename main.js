@@ -55,10 +55,13 @@
     const tabs = $$('[data-tab]');
     const showPanel = (scroll) => {
       const id = location.hash.slice(1);
-      const target = panels.find((p) => p.id === id) || panels[0];
+      // Hash kann ein Reiter sein oder ein Element darin (z. B. #svc-matching im Reiter Leistungen)
+      const inner = id ? document.getElementById(id) : null;
+      const target = panels.find((p) => p.id === id) || (inner && panels.find((p) => p.contains(inner))) || panels[0];
       panels.forEach((p) => { p.hidden = p !== target; });
       tabs.forEach((t) => { if (t.dataset.tab === target.id) t.setAttribute('aria-current', 'true'); else t.removeAttribute('aria-current'); });
-      if (scroll && panels.some((p) => p.id === id)) target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+      const jumpTo = inner && target !== inner && target.contains(inner) ? inner : (panels.some((p) => p.id === id) ? target : null);
+      if (scroll && jumpTo) requestAnimationFrame(() => jumpTo.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' }));
     };
     showPanel(!!location.hash);
     window.addEventListener('hashchange', () => showPanel(true));
